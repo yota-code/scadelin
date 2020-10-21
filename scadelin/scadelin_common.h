@@ -9,4 +9,13 @@ typedef struct {
 	float * data;
 } mat_T;
 
+// the data already exists
+#define NEW_mat_T(name, val_p, row_n, col_n) \
+	static mat_T name = {0}; \
+	name.row = row_n; \
+	name.col = col_n; \
+	name.data = val_p;
+
+#define MAT(m, i, j) ( (m)->data[(i*(m)->col) + j] )
+
 #endif

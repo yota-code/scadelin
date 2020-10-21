@@ -10,6 +10,7 @@ int mat_mul(mat_T * a, mat_T * b, mat_T * c) {
 		c = a * b, where a, b, c are matrices
 	**/
 	// check the coherency for the matrices size
+
 	assert( a->col == b->row && a->row == c->row && b->col == c->col );
 	for (size_t i=0 ; i < a->row ; i++) {
 		for (size_t j=0 ; j < b->col ; j++) {
@@ -19,6 +20,7 @@ int mat_mul(mat_T * a, mat_T * b, mat_T * c) {
 			}
 		}
 	}
+	
 }
 
 int mat_print(mat_T * a) {

@@ -3,8 +3,6 @@
 
 #include "scadelin_common.h"
 
-#define MAT(m, i, j) ( m->data[(i*m->col) + j] )
-
 int mat_mul(mat_T * input_a, mat_T * input_b, mat_T * output_c);
 int mat_print(mat_T * a);
 
