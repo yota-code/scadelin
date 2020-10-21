@@ -28,4 +28,7 @@ typedef struct {
 
 #define MAT(m, i, j) ( (m)->p[(i*(m)->col) + j] )
 
+
+#define MAT__assert__(m, i, j) assert( 0 <= i && i < ((m)->row) && 0 <= j && j < ((m)->col) )
+
 #endif

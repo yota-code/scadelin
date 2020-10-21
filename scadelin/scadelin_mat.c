@@ -17,12 +17,15 @@ int mat_mul(mat_T * a, mat_T * b, mat_T * c) {
 	**/
 
 	// check the coherency for the matrices size
-
 	assert( a->col == b->row && a->row == c->row && b->col == c->col );
+
 	for (size_t i=0 ; i < a->row ; i++) {
 		for (size_t j=0 ; j < b->col ; j++) {
+			MAT__assert__(c, i, j);
 			MAT(c, i, j) = 0;
 			for (size_t k=0 ; k < a->row ; k++){
+					MAT__assert__(a, i, k);
+					MAT__assert__(b, k, j);
 					MAT(c, i, j) += MAT(a, i, k) * MAT(b, k, j);
 			}
 		}
