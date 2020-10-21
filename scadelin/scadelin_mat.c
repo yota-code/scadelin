@@ -5,10 +5,17 @@
 
 #include "scadelin_mat.h"
 
+/*
+	it is not possible to have a convenient function which return a variable sized data
+	the only way is to pass a pointer as an argument !
+	If a pointer is returned, the memory associated being de-allocated at the exit, it is useless
+*/
+
 int mat_mul(mat_T * a, mat_T * b, mat_T * c) {
 	/**
 		c = a * b, where a, b, c are matrices
 	**/
+
 	// check the coherency for the matrices size
 
 	assert( a->col == b->row && a->row == c->row && b->col == c->col );
@@ -20,7 +27,7 @@ int mat_mul(mat_T * a, mat_T * b, mat_T * c) {
 			}
 		}
 	}
-	
+
 }
 
 int mat_print(mat_T * a) {
